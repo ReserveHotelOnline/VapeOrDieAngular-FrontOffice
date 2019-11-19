@@ -1,11 +1,9 @@
 <div class="prodDiv">
   <div  class="prodList">
   <table class="prdTab">
-    <tr>
-      <td>Image produit  </td>
-      <td>
-        <div>info produit</div>
-      </td>
+    <tr *ngFor="let t of tabRes">
+      <td>{{t.idProduit}}</td>
+      <td><div>{{t.nbProduit}}</div></td>
     </tr>
   </table>
   </div>

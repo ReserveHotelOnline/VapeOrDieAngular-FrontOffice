@@ -5,10 +5,7 @@ import {Router} from '@angular/router';
 import {Category} from '../category';
 import {NavComponent} from '../nav/nav.component';
 import {CategoryDetailsComponent} from '../category-details/category-details.component';
-interface MyObj {
-  idProduit: number;
-  nbProduit: number;
-}
+
 
 @Component({
   selector: 'app-category-list',
@@ -17,13 +14,7 @@ interface MyObj {
 })
 
 export class CategoryListComponent implements OnInit {
-  tab: [];
-  panier3: MyObj;
-  categories;
-  tabRes: MyObj[];
-  allProductStringReq: string;
-  allProductStringRes: string;
-
+  categories: Category[];
   constructor(private categoryService: CategoryService, private router: Router) {
   }
 
@@ -32,10 +23,9 @@ export class CategoryListComponent implements OnInit {
   }
 
   reloadData() {
-    this.categories = this.categoryService.getCategoriesList().subscribe();
-    console.log(this.tab) ;
-
-
+    this.categoryService.getCategoriesList().subscribe( r => {
+      this.categories = r;
+    });
   }
 
   deleteCategory(id: number) {
@@ -53,12 +43,5 @@ export class CategoryListComponent implements OnInit {
     this.reloadData();
     this.router.navigate(['updateCategory', id]);
   }
-
-
-
-
-
-
-
 
 }
