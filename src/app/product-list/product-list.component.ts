@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ServiceProductService} from '../service-product.service';
-import {Product} from '../Product';
+import {Observable} from 'rxjs';
+import {Product} from '../product';
+import {ProductService} from '../product.service';
+import {Router} from '@angular/router';
+import {Category} from '../category';
 
 @Component({
   selector: 'app-product-list',
@@ -8,21 +11,29 @@ import {Product} from '../Product';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  centered = false;
-  disabled = false;
-  unbounded = false;
-
-  radius: number;
-  color: string;
-  private p: Product;
-  constructor(private serviceP: ServiceProductService) { }
+  products: Product[];
+  category: Category;
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.serviceP.getProductList().subscribe(r => console.log(r));
-    this.p = new Product();
+    this.reloadData();
   }
-  addPanier(){
-    this.serviceP.addProduct(this.p).subscribe();
+  reloadData() {
+    this.productService.getProducts().subscribe(r => {
+      this.products = r;
+    });
   }
-
+  deleteProduct(idProduct: number) {
+    this.productService.deleteProduct(idProduct).subscribe(data => {
+      console.log(data);
+      this.reloadData();
+    }, error => console.log(error));
+  }
+  productDetails(id: number) {
+    this.router.navigate(['detailProduct', id]);
+  }
+  updateProduct(id: number) {
+    this.reloadData();
+    this.router.navigate(['updateProduct', id]);
+  }
 }

@@ -13,6 +13,7 @@ import {CategoryDetailsComponent} from './category-details/category-details.comp
 import {CategoryListComponent} from './category-list/category-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MiniPanierComponent } from './mini-panier/mini-panier.component';
+import { ProductListComponent } from './product-list/product-list.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuItem, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
 import { ProductListComponent } from './product-list/product-list.component';
