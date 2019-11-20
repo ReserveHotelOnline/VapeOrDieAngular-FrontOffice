@@ -19,7 +19,7 @@ export class MiniPanierComponent implements OnInit {
 
   ngOnInit() {
     this.allProductStringRes = localStorage.getItem('panierKey');
-   // this.tabRes = JSON.parse(this.allProductStringRes);
+    this.tabRes = JSON.parse(this.allProductStringRes);
   }
 
 }

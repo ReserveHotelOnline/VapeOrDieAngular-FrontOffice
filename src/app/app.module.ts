@@ -13,6 +13,14 @@ import {CategoryDetailsComponent} from './category-details/category-details.comp
 import {CategoryListComponent} from './category-list/category-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MiniPanierComponent } from './mini-panier/mini-panier.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuItem, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
+import { ProductListComponent } from './product-list/product-list.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {MatBadgeModule} from "@angular/material/badge";
+import {MatRippleModule} from "@angular/material/core";
+
 
 @NgModule({
   declarations: [
@@ -24,13 +32,14 @@ import { MiniPanierComponent } from './mini-panier/mini-panier.component';
     FooterComponent,
     CategoryDetailsComponent,
     CategoryListComponent,
-    MiniPanierComponent
+    MiniPanierComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, MatButtonModule, MatMenuModule, MatGridListModule, MatCardModule, MatBadgeModule, MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
