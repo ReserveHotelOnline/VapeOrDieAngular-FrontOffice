@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryListComponent} from '../category-list/category-list.component';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {MiniPanierComponent} from '../mini-panier/mini-panier.component';
 
 @Component({
   selector: 'app-nav',
@@ -37,5 +38,6 @@ export class NavComponent implements OnInit {
 
       this.isOnP = true;
     }
+
   }
 }

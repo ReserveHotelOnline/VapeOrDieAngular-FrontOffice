@@ -14,13 +14,10 @@ import {CategoryListComponent} from './category-list/category-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MiniPanierComponent } from './mini-panier/mini-panier.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import {MatButtonModule} from "@angular/material/button";
-import {MatMenuItem, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
-import { ProductListComponent } from './product-list/product-list.component';
-import {MatGridListModule} from "@angular/material/grid-list";
-import {MatCardModule} from "@angular/material/card";
-import {MatBadgeModule} from "@angular/material/badge";
-import {MatRippleModule} from "@angular/material/core";
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuItem, MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
+
+
 
 
 @NgModule({
@@ -40,7 +37,7 @@ import {MatRippleModule} from "@angular/material/core";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule, MatButtonModule, MatMenuModule, MatGridListModule, MatCardModule, MatBadgeModule, MatRippleModule
+    BrowserAnimationsModule, MatButtonModule, MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
