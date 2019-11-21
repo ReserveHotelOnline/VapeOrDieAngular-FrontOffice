@@ -17,8 +17,8 @@
 
         <div class="quantity">
           <button (click)="incr(t.name)" class="pmBut">+</button><br>
-          <input type="number" min="1" max="10" disabled value="{{t.qte}}"><br>
-          <button class="pmBut">-</button>
+          <span class="qte">{{t.qte-1}}</span><br>
+          <button (click)="decr(t.name)" class="pmBut">-</button>
         </div>
 
         <div class="total-price">{{t.price}}</div>

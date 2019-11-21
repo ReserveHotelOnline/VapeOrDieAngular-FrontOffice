@@ -30,8 +30,6 @@ export class ProductListComponent implements OnInit {
   }
 
   reloadData() {
-
-
     this.productService.getProducts().subscribe(r => {
       this.products = r;
       console.log(r);
@@ -54,12 +52,16 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['updateProduct', id]);
   }
 
-  addToCart(n: string, p: number) {
+  addToCarta(n: string, p: number) {
     this.allProductStringRes = localStorage.getItem('panierKey');
     this.tabRes = JSON.parse(this.allProductStringRes);
     console.log(this.tabRes) ;
-    if (this.tabRes != null || this.tabRes !== undefined || this.tabRes !== []) {
-      console.log('ni null ni undedf  ');
+    // tslint:disable-next-line:triple-equals
+    if (this.tabRes == null || this.tabRes == undefined || this.tabRes.length == 0) {
+      this.tabRes = [] ;
+      this.tabRes.push(this.cart = {name: n, price: p, qte: 1}); console.log('tab jdida ');
+    }
+    if (this.tabRes.length > 0) {
       for (const f of this.tabRes) {
         if (f.name === n) {
           f.qte = f.qte + 1;
@@ -71,11 +73,7 @@ export class ProductListComponent implements OnInit {
         this.cart = {name: n, price: p, qte: 1};
         this.tabRes.push(this.cart);
         console.log('zedna produit jdid khater ' ); }
-
-    } else {
-    this.tabRes = [] ;
-    this.tabRes.push(this.cart = {name: n, price: p, qte: 1}); console.log('tab jdida ');}
-    console.log(this.tabRes);
+    }
     this.allProductStringRes = JSON.stringify(this.tabRes);
     localStorage.setItem('panierKey', this.allProductStringRes);
   }
