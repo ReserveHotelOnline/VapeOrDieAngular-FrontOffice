@@ -26,12 +26,12 @@ export class MiniPanierComponent implements OnInit {
     this.tabRes = JSON.parse(this.allProductStringRes);
     console.log(this.tabRes);
   }
-  recup() {
+recup(){
 
-    this.allProductStringRes = localStorage.getItem('panierKey');
-    this.tabRes = JSON.parse(this.allProductStringRes);
-    console.log(this.tabRes) ;
-  }
+  this.allProductStringRes = localStorage.getItem('panierKey');
+  this.tabRes = JSON.parse(this.allProductStringRes);
+  console.log(this.tabRes) ;
+}
 
   hide() {
 
@@ -53,13 +53,14 @@ export class MiniPanierComponent implements OnInit {
     console.log(this.tabRes) ;
     let i = 0 ;
     for (let f of this.tabRes) {
-      if (f.name === n) {
-        this.tabRes.splice(i, 1);
-      }
-      i++ ;
+       if (f.name === n) {
+       this.tabRes.splice(i, 1);
+       }
+       i++ ;
     }
     this.allProductStringRes = JSON.stringify(this.tabRes);
     localStorage.setItem('panierKey', this.allProductStringRes);
   }
 
 }
+

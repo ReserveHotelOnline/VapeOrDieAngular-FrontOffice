@@ -34,6 +34,7 @@ export class ProductListComponent implements OnInit {
 
     this.productService.getProducts().subscribe(r => {
       this.products = r;
+      console.log(r);
     });
   }
 
@@ -72,8 +73,8 @@ export class ProductListComponent implements OnInit {
         console.log('zedna produit jdid khater ' ); }
 
     } else {
-      this.tabRes = [] ;
-      this.tabRes.push(this.cart = {name: n, price: p, qte: 1}); console.log('tab jdida ');}
+    this.tabRes = [] ;
+    this.tabRes.push(this.cart = {name: n, price: p, qte: 1}); console.log('tab jdida ');}
     console.log(this.tabRes);
     this.allProductStringRes = JSON.stringify(this.tabRes);
     localStorage.setItem('panierKey', this.allProductStringRes);

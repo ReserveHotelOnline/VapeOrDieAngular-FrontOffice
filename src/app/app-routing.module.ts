@@ -4,12 +4,14 @@ import { HomeComponent} from './home/home.component';
 import { ContactComponent} from './contact/contact.component';
 import { LoginComponent} from './login/login.component';
 import { CategoryDetailsComponent} from './category-details/category-details.component';
+import {ProductListComponent} from "./product-list/product-list.component";
 
 
 const routes: Routes = [
   {path : '' , component: HomeComponent},
   {path : 'Contact', component: ContactComponent},
   {path : 'Login', component: LoginComponent},
+  {path : 'Produit' , component: ProductListComponent},
   {path: 'detailCategory/:id', component: CategoryDetailsComponent},
 
 ];
