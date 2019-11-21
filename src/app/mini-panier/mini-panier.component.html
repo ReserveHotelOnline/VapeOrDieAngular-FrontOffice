@@ -1,164 +1,32 @@
-  <div   class="prodList" (mouseleave)="hide()">
-    <div class="shopping-cart">
-      <!-- Title -->
-      <h4 class="title">
-        Shopping Bag
-      </h4>
+<div   class="prodList" (mouseenter)="recup()" (mouseleave)="hide()">
+  <div class="shopping-cart">
+    <!-- Title -->
+    <h4 class="title">
+      Shopping Bag
+    </h4>
+    <!--End Item 1 -->
 
-      <!-- Product #1 -->
-      <div class="item">
-        <div >
-          <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-        </div>
-
-        <div class="description">
-          <span>Vape</span>
-        </div>
-
-        <div class="quantity">
-          <button class="pmBut">+</button><br>
-          <input type="text" min="1" max="10" disabled value="1"><br>
-          <button class="pmBut">-</button>
-        </div>
-
-        <div class="total-price">$549</div>
-
-      <div class="buttons">
-        <button class="delBut">X</button>
-      </div>
-
-      </div>
-      <!--End Item 1 -->
-
-      <div class="item">
-        <div >
-          <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-        </div>
-
-        <div class="description">
-          <span>Vape</span>
-        </div>
-
-        <div class="quantity">
-          <button class="pmBut">+</button><br>
-          <input type="text" min="1" max="10" disabled value="1"><br>
-          <button class="pmBut">-</button>
-        </div>
-
-        <div class="total-price">$549</div>
-
-        <div class="buttons">
-          <button class="delBut">X</button>
-        </div>
-
-      </div> <div class="item">
+    <div class="item" *ngFor="let t of tabRes">
       <div >
         <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
       </div>
 
       <div class="description">
-        <span>Vape</span>
+        <span>{{t.name}}</span>
       </div>
 
       <div class="quantity">
-        <button class="pmBut">+</button><br>
-        <input type="text" min="1" max="10" disabled value="1"><br>
+        <button (click)="incr(t.name)" class="pmBut">+</button><br>
+        <input type="number" min="1" max="10" disabled value="{{t.qte}}"><br>
         <button class="pmBut">-</button>
       </div>
 
-      <div class="total-price">$549</div>
+      <div class="total-price">{{t.price}}</div>
 
       <div class="buttons">
-        <button class="delBut">X</button>
+        <button (click)="suppProduct(t.name)" class="delBut">X</button>
       </div>
-
-    </div> <div class="item">
-      <div >
-        <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Vape</span>
-      </div>
-
-      <div class="quantity">
-        <button class="pmBut">+</button><br>
-        <input type="text" min="1" max="10" disabled value="1"><br>
-        <button class="pmBut">-</button>
-      </div>
-
-      <div class="total-price">$549</div>
-
-      <div class="buttons">
-        <button class="delBut">X</button>
-      </div>
-
-    </div> <div class="item">
-      <div >
-        <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Vape</span>
-      </div>
-
-      <div class="quantity">
-        <button class="pmBut">+</button><br>
-        <input type="text" min="1" max="10" disabled value="1"><br>
-        <button class="pmBut">-</button>
-      </div>
-
-      <div class="total-price">$549</div>
-
-      <div class="buttons">
-        <button class="delBut">X</button>
-      </div>
-
-    </div> <div class="item">
-      <div >
-        <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Vape</span>
-      </div>
-
-      <div class="quantity">
-        <button class="pmBut">+</button><br>
-        <input type="text" min="1" max="10" disabled value="1"><br>
-        <button class="pmBut">-</button>
-      </div>
-
-      <div class="total-price">$549</div>
-
-      <div class="buttons">
-        <button class="delBut">X</button>
-      </div>
-
-    </div> <div class="item">
-      <div >
-        <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Vape</span>
-      </div>
-
-      <div class="quantity">
-        <button class="pmBut">+</button><br>
-        <input type="text" min="1" max="10" disabled value="1"><br>
-        <button class="pmBut">-</button>
-      </div>
-
-      <div class="total-price">$549</div>
-
-      <div class="buttons">
-        <button class="delBut">X</button>
-      </div>
-
     </div>
-    </div>
-
   </div>
 
-
+</div>

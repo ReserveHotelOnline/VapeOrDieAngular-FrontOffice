@@ -121,6 +121,8 @@ html, body{
 }
 
 footer{
+  z-index:-1;
+  width: 100%;
   background-color: rgb(62,69,81);
   color: white;
 }
