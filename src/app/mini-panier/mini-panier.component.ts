@@ -47,6 +47,22 @@ recup(){
     this.allProductStringRes = JSON.stringify(this.tabRes);
     localStorage.setItem('panierKey', this.allProductStringRes);
   }
+
+  decr(n: string) {
+    for (const f of this.tabRes) {
+      if (f.name === n) {
+        f.qte--;
+        this.qte--;
+        if ( f.qte === 1)
+        {
+          this.suppProduct(f.name) ;
+        }
+        break; }}
+    this.allProductStringRes = JSON.stringify(this.tabRes);
+    localStorage.setItem('panierKey', this.allProductStringRes);
+  }
+
+
   suppProduct(n) {
     this.allProductStringRes = localStorage.getItem('panierKey');
     this.tabRes = JSON.parse(this.allProductStringRes);
@@ -60,6 +76,7 @@ recup(){
     }
     this.allProductStringRes = JSON.stringify(this.tabRes);
     localStorage.setItem('panierKey', this.allProductStringRes);
+    this.ngOnInit();
   }
 
 }
