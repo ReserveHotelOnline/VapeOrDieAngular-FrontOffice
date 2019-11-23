@@ -71,6 +71,7 @@ recup(){
     for (let f of this.tabRes) {
        if (f.name === n) {
        this.tabRes.splice(i, 1);
+       break;
        }
        i++ ;
     }

@@ -1,11 +1,12 @@
-  <div   class="prodList" (mouseenter)="recup()" (mouseleave)="hide()">
+
+
+<div   class="prodList" (mouseenter)="recup()" (mouseleave)="hide()">
     <div class="shopping-cart">
       <!-- Title -->
       <h4 class="title">
         Shopping Bag
       </h4>
 <!--End Item 1 -->
-
       <div class="item" *ngFor="let t of tabRes">
         <div >
           <img class="image" src="../../assets/Images/VapeEx.png" alt="" />
@@ -17,16 +18,17 @@
 
         <div class="quantity">
           <button (click)="incr(t.name)" class="pmBut">+</button><br>
-          <span class="qte">{{t.qte-1}}</span><br>
+          <div class="qte">{{t.qte}}</div><br>
           <button (click)="decr(t.name)" class="pmBut">-</button>
         </div>
 
-        <div class="total-price">{{t.price}}</div>
+        <div class="total-price">{{t.price}} DT</div>
 
         <div class="buttons">
           <button (click)="suppProduct(t.name)" class="delBut">X</button>
         </div>
     </div>
+
     </div>
 
   </div>

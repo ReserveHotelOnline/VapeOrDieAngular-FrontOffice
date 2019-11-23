@@ -60,8 +60,7 @@ export class ProductListComponent implements OnInit {
     if (this.tabRes == null || this.tabRes == undefined || this.tabRes.length == 0) {
       this.tabRes = [] ;
       this.tabRes.push(this.cart = {name: n, price: p, qte: 1}); console.log('tab jdida ');
-    }
-    if (this.tabRes.length > 0) {
+    } else if (this.tabRes.length > 0) {
       for (const f of this.tabRes) {
         if (f.name === n) {
           f.qte = f.qte + 1;
